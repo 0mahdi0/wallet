@@ -1,0 +1,60 @@
+table.alternates{
+  margin-top: 15px;
+}
+tbody tr.alternate:nth-child(even) {
+  background-color: #adadad;
+}
+  form.form_edit_U_P {
+    padding: 10px;
+  }
+  .panel {
+    padding: 0 18px;
+    background-color: rgb(226, 226, 226);
+    color: black;
+    text-align: right;
+    max-height: 0;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: max-height 0.2s ease-out;
+  }
+  input.price_number,label.number,.date_U_P_L {
+    right: 0;
+    display: inline;
+  }
+  input.price_number_A{
+    width: 263px;
+  }
+  select.option_users_login_A{
+    display: inline;
+    padding: 0 50px;
+  }
+  select.option_users_login{
+    display: inline;
+    padding: 0 25px;
+  }
+  input.date_U_P{
+    width: 263px;
+    display: inline-block;
+  }
+  input.date_U_P_I{
+    width: 250px;
+    display: inline-block;
+  }
+  .fileToUpload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+.form_edit{
+  padding: 0px 20px 0px 0px;
+  margin:  0px  0px 0px 20px;
+}
+table td.formt-table{
+  padding: 15px 0px 0px;
+}
+table th.formt-table{
+  float: right;
+  padding: 20px 0px 0px;
+  font-size: 14px;
+}
