@@ -8,20 +8,19 @@ Version: 1.0.0
 Author URI: https://wp-mahdi.com/wordpress
 */
 
-    defined("ABSPATH") || exit("no access");
-
+    defined( 'ABSPATH' ) || exit;
+    //define directory and url in plugin
     define("WPS_DIR",trailingslashit(plugin_dir_path(__FILE__)));
     define("WPS_BAK",WPS_DIR.'backend');
     define("WPS_FOR",WPS_DIR.'forntend');
-    define("WPS_TMP",WPS_DIR.'tmp');
-    
+    define("WPS_USE",WPS_DIR.'user');
     define("WPS_URL",trailingslashit(plugin_dir_url(__FILE__)));
     define("WPS_CSS",WPS_URL.'assets/css');
     define("WPS_JS" ,WPS_URL.'assets/js');
     define("WPS_IMA",WPS_URL.'assets/images');
 
     
-
+    //
     if (is_admin()){
         include WPS_BAK."/main_menu.php";
         include WPS_BAK."/submenu1.php";
@@ -30,6 +29,27 @@ Author URI: https://wp-mahdi.com/wordpress
     else{
         include WPS_FOR."/forntend.php";
     }
+    //add menu and submenu page
+    function wp_users_price(){
+
+        add_menu_page('کیف پول','کیف پول','manage_options','wallet-users','wp_wallet_users','dashicons-awards');
+        add_submenu_page('wallet-users','تایید کاربران','تایید کاربران','manage_options','all-users','wp_wallet_users_all_users');
+        add_submenu_page('wallet-users','تیکت کاربران','تیکت','manage_options','tikets','wp_wallet_users_tikets');
+    
+    }
+    add_action('admin_menu','wp_users_price');
+    //enqueue style and script
+    function style_users_price(){
+
+        wp_register_script('wp_apis_scripts_users', WPS_JS.'/wp_apis_scripts_users.js' , array ('jquery'));
+        wp_register_style('wp_apis_style_sheet', WPS_CSS.'/wp_apis_style_sheet.css');
+        wp_enqueue_style('wp_apis_style_sheet');
+        wp_enqueue_script('wp_apis_scripts_users');
+
+
+    }
+
+    add_action('admin_enqueue_scripts','style_users_price');
 // function test_contact_form()
 // {      
 //   global $wpdb; 
