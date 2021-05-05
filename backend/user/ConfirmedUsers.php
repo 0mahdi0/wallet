@@ -13,7 +13,7 @@ wp_enqueue_script('wp_apis_scripts_users');
                     <form style="display:inline;" action="" method="post">
                         <select name="select_action">
                             <option value="trash">حذف همه</option>
-                            <option value="no_approved">تایید نشده</option>
+                            <option value="no_approved">لغو</option>
                         </select>
                         <input type="submit" name="submit" value="تایید" class="button">
             </td>
@@ -33,8 +33,8 @@ wp_enqueue_script('wp_apis_scripts_users');
                 <td class="column-columnname"><?php echo $user->user_email; ?></td>
                 <td class="column-columnname">
                     <div class="row-actions">
-                    <span class="trash"><a href="<?php echo add_query_arg(['action' => 'trash' , 'item' => $user->ID ]); ?>">حذف</a><span class="bitwin_line"> |</span></span>
-                    <span class="trash"><a href="<?php echo add_query_arg(['action' => 'no_approved' , 'item' => $user->ID ]); ?>">تایید نشده</a></span>
+                    <span class="trash" name="select_trash"><a href="<?php echo add_query_arg(['action' => 'trash' , 'item' => $user->ID ]); ?>">حذف</a><span class="bitwin_line"> |</span></span>
+                    <span class="trash" name="select_trash"><a href="<?php echo add_query_arg(['action' => 'no_approved' , 'item' => $user->ID ]); ?>">لغو</a></span>
                     </div>
                 </td>
             </tr>

@@ -1,12 +1,12 @@
 <div class="wrap">
-    <a class="button" style="display:block;width: 120px;" href="https://wp-mahdi.com/wordpress/wp-admin/user-new.php">افزودن کاربر جدید</a><br>
+    <a class="button" style="display:block;width: 120px;" href=<?php $actual_link ; ?>"/wordpress/wp-admin/user-new.php">افزودن کاربر جدید</a><br>
         <h2 class="nav-tab-wrapper">
         <?php foreach ($tabs as $name => $title): ?>
             <?php $class = ( $name == $currentTab ) ? ' nav-tab-active' : ''; ?>
             <a class='nav-tab<?php echo $class; ?>' href='?page=all-users&tab=<?php echo $name; ?>'><?php echo $title; ?></a>
         <?php endforeach; ?>
         <?php 
-
+            $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
             switch ($currentTab) {
                 case "ConfirmedUsers":
                 include  WPS_USE."/ConfirmedUsers.php";

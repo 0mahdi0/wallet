@@ -1,6 +1,6 @@
 <?php
 
-wp_enqueue_script('wp_apis_scripts_users_price');
+wp_enqueue_script('wp_apis_scripts_users');
 
 ?>
 <h1 class="wp-heading-inline" style="margin:inherit;" >کاربران تایید نشده</h1>
@@ -33,8 +33,8 @@ wp_enqueue_script('wp_apis_scripts_users_price');
                 <td class="column-columnname"><?php echo $user->user_email; ?></td>
                 <td class="column-columnname">
                     <div class="row-actions">
-                    <span class="trash"><a href="<?php echo add_query_arg(['action' => 'trash' , 'item' => $user->ID ]); ?>">حذف</a><span class="bitwin_line"> |</span></span>
-                    <span class="edit"><a href="<?php echo add_query_arg(['action' => 'approved' , 'item' => $user->ID ]); ?>">تایید</a></span>
+                    <span class="trash" name="select_trash"><a href="<?php echo add_query_arg(['action' => 'trash' , 'item' => $user->ID ]); ?>">حذف</a><span class="bitwin_line"> |</span></span>
+                    <span class="edit"  name="select_edit"><a href="<?php echo add_query_arg(['action' => 'approved' , 'item' => $user->ID ]); ?>">تایید</a></span>
                     </div>
                 </td>
             </tr>

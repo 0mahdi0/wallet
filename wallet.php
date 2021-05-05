@@ -13,21 +13,25 @@ Author URI: https://wp-mahdi.com/wordpress
     define("WPS_DIR",trailingslashit(plugin_dir_path(__FILE__)));
     define("WPS_BAK",WPS_DIR.'backend');
     define("WPS_FOR",WPS_DIR.'forntend');
-    define("WPS_USE",WPS_DIR.'user');
+    define("WPS_REG",WPS_FOR.'/user_theme');
+    define("WPS_USE",WPS_BAK.'/user');
     define("WPS_URL",trailingslashit(plugin_dir_url(__FILE__)));
     define("WPS_CSS",WPS_URL.'assets/css');
     define("WPS_JS" ,WPS_URL.'assets/js');
     define("WPS_IMA",WPS_URL.'assets/images');
 
+    include WPS_FOR."/register.php";
+    include WPS_FOR."/sign_in.php";
+
     
-    //
+    //if is user admin include these dirctory
     if (is_admin()){
         include WPS_BAK."/main_menu.php";
         include WPS_BAK."/submenu1.php";
         include WPS_BAK."/submenu2.php";
     }
     else{
-        include WPS_FOR."/forntend.php";
+        include WPS_FOR."/account.php";
     }
     //add menu and submenu page
     function wp_users_price(){
@@ -38,8 +42,8 @@ Author URI: https://wp-mahdi.com/wordpress
     
     }
     add_action('admin_menu','wp_users_price');
-    //enqueue style and script
-    function style_users_price(){
+    //enqueue style and script in admin page
+    function users_wallet(){
 
         wp_register_script('wp_apis_scripts_users', WPS_JS.'/wp_apis_scripts_users.js' , array ('jquery'));
         wp_register_style('wp_apis_style_sheet', WPS_CSS.'/wp_apis_style_sheet.css');
@@ -48,8 +52,15 @@ Author URI: https://wp-mahdi.com/wordpress
 
 
     }
+    //enqueue style and script in all page
+    function re_users_wallet(){
 
-    add_action('admin_enqueue_scripts','style_users_price');
+        wp_register_script('wp_apis_fornt', WPS_JS.'/wp_apis_fornt.js' , array ('jquery'));
+        wp_register_style('wp_apis_fornt', WPS_CSS.'/wp_apis_fornt.css');
+
+    }
+    add_action('admin_enqueue_scripts','users_wallet');
+    add_action('wp_enqueue_scripts','re_users_wallet');
 // function test_contact_form()
 // {      
 //   global $wpdb; 
