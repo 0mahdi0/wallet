@@ -10,3 +10,53 @@ tbody tr.alternate:nth-child(even) {
   margin: 0 10px;
   color: #000000;
 }
+.select_user , .subject{
+  font-size: 18px !important;
+}
+.text{
+  font-size: 15px !important;
+}
+.wu_mp{
+  margin:25px 0 !important; 
+  width: 260px;
+}
+.div_center{
+  margin:auto !important;
+  display:table !important;
+}
+.select_users,.subject{
+  width: 260px;
+}
+.admin_m{
+  float: left;
+}
+.user_m ,.admin_m{
+  padding: 20px;
+  margin-right: 50px !important;
+  -webkit-user-modify: read-write-plaintext-only;
+  width: 50%;
+  background-color: white ;
+  border: black 1 solid;
+  border-radius: 15px;
+}
+.user_m{ 
+  float: right;
+}
+.formt-table{
+  margin: 20px auto;
+}
+.ADmin{
+  float: left;
+  background-color: rgb(201, 201, 201) ;
+}
+.USer ,.ADmin{
+  text-align: center;
+  margin:30px auto;
+  -webkit-user-modify: read-write-plaintext-only;
+  width: 40%;
+  border-radius: 15px;
+}
+.USer{ 
+  float: right;
+  background-color: white ;
+}

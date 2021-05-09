@@ -39,7 +39,7 @@ jQuery(document).ready(function ($){
                             }
                         }
                         setTimeout(function(){
-                            window.location.href = '/wordpress';
+                            window.location.href = '/wordpress/account';
                         },2000)
 
                     }
@@ -117,7 +117,7 @@ jQuery(document).ready(function ($){
                             }
                         }
                         setTimeout(function(){
-                            window.location.href = '/wordpress/2021/05/03/6/';
+                            window.location.href = '/wordpress/login';
                         },2000)
 
                     }
@@ -155,3 +155,27 @@ jQuery(document).ready(function ($){
     });
 
 });
+
+function tabsA(evt, tabName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    document.getElementById(tabName).style.display = "contents";
+  }
+  // Get the element with id="defaultOpen" and click on it
+  document.getElementById("defaultOpen").click();
+  function tabsB(evt, tabName) {
+    var i, textcontent, button;
+    textcontent = document.getElementsByClassName("textcontent");
+    for (i = 0; i < textcontent.length; i++) {
+        textcontent[i].style.display = "none";
+    }
+    button = document.getElementsByClassName("button");
+    document.getElementById(tabName).style.display = "block";
+}
+function direction(){
+    window.location.href = '/wordpress/account';
+}

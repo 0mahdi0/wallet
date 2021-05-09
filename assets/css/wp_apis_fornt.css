@@ -14,7 +14,6 @@
   overflow: auto; /* Enable scroll if needed */
 
 }
-
 /* Modal Content */
 .modal-content {
   position: relative;
@@ -67,4 +66,82 @@
 .commentMessage{
   border-radius: 15px;
   padding: 50px 0px;
+}
+/* Style tab links */
+.tablink {
+  background-color: #555;
+  color: black;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent , .textcontent {
+  color: black;
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+}
+
+/* Style the buttons inside the tab */
+.tablink {
+  background-color: #555;
+  color: black;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+.logout{
+  color: #ddd !important;
+}
+.logout:hover{
+  color:black !important;
+}
+#show_all{
+  display: none;
+}
+#show_all a{
+  display: inline-block !important;
+}
+#show_all p,h4{
+  text-align: center !important;
+}
+.admin_m{
+  background-color: rgb(201, 201, 201) ;
+  text-align: center !important;
+  float: left;
+  margin-left: 50px !important;
+}
+.user_m ,.admin_m{
+  padding: 20px;
+  -webkit-user-modify: read-write-plaintext-only;
+  width: 40%;
+  border-radius: 15px;
+}
+.user_m{ 
+  margin-right: 50px !important;
+  background-color: white ;
+  text-align: center !important;
+  float: right;
+}
+.tiket_end{
+  display: inline-block !important;
+  margin-right: 10px !important;
 }

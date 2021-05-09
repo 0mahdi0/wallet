@@ -1,5 +1,51 @@
 <?php
+function user_login(){
 
+
+    global $wpdb;
+
+    if ( isset($_POST['submit'])) {
+        if (isset($_POST['subject']) && isset($_POST['user_message']) ) {
+
+            $subject    = $_POST['subject'];
+            $message    = $_POST['user_message'];
+
+            $success = $wpdb->insert($wpdb->prefix.'wu_tikets',
+                [
+                    'user_id'        => 0,
+                    'subject'        => $subject,
+                    'text'           => $message,
+                    'status'         => 3
+                ],
+                [
+                    '%d',
+                    '%s',
+                    '%s',
+                    '%d'
+                ]
+                );
+            if ($success != false) {
+                ?>
+                <p><strong>ارسال شد</strong></p>
+                    <script>
+                
+                    setTimeout(function(){
+                            window.location.href = '/wordpress/2021/05/03/login/';
+                        },2000)
+                        
+                    </script>
+ 
+                <?php
+            }else{
+                ?>
+                <p><strong>ارسال نشد</strong></p>
+                <?php
+            }
+        }
+    }
+
+    include WPS_REG."/login.php";
+}
 function wp_wu_do_login(){
     $user_email    = sanitize_text_field($_POST['user_email']);
     $user_password = sanitize_text_field($_POST['user_password']);
@@ -18,11 +64,12 @@ function wp_wu_do_login(){
         ], 403);
     }
     else{
-        $loginResults = wp_signon([
-            'user_login'    => $user->user_login,
-            'user_password' => $user_password,
-            'remember'      => false
-        ]);
+        if ($user->user_status == 1) {
+            $loginResults = wp_signon([
+                'user_login'    => $user->user_login,
+                'user_password' => $user_password,
+                'remember'      => false
+            ]);
         if (is_wp_error($loginResults)) {
             wp_send_json([
                 'success' => false,
@@ -35,6 +82,13 @@ function wp_wu_do_login(){
                 'message' => 'با موفقیت وارد شدید'
             ], 200); 
         }
+    }
+    else{
+        wp_send_json([
+            'success' => false,
+            'message' => 'شما اجازه ورود به سایت را ندارید'
+        ], 403);      
+    }
     }
 }
 function wp_wu_validate_email_password($email,$password){
@@ -62,3 +116,4 @@ function wp_wu_validate_email_password($email,$password){
 }
 
 add_action('wp_ajax_nopriv_wp_wu_login','wp_wu_do_login');
+add_shortcode('wu_user_login','user_login');

@@ -23,4 +23,7 @@ for (i = 0; i < chk.length; i++)
 chk[i].checked = true ;
 document.getElementsByName('select_all').checked=true;
 }  
-} 
+}
+function direction(){
+  window.location.href = '/wordpress/wp-admin/admin.php?page=tikets&tab=Admin-replay';
+}
