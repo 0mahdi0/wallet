@@ -27,3 +27,9 @@ document.getElementsByName('select_all').checked=true;
 function direction(){
   window.location.href = '/wordpress/wp-admin/admin.php?page=tikets&tab=Admin-replay';
 }
+function direction1(){
+  window.location.href = '/wordpress/wp-admin/admin.php?page=wallet-users&tab=ConfirmedW';
+}
+function direction2(){
+  window.location.href = '/wordpress/wp-admin/admin.php?page=wallet-users&tab=NConfirmedW';
+}

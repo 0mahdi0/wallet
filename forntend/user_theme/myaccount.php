@@ -5,6 +5,7 @@
     $current_user_id= get_current_user_id();
 
     if($current_user_id != 0){
+      if (!isset($_GET['A-wallet'])) {
       if (!isset($_GET['show'])) {
 ?>
 <div id="hide_all">
@@ -15,8 +16,25 @@
   <button class="tablinks" onclick="tabsA(event, 'logout')">خروج</button>
 </div>
 <div id="wallet" class="tabcontent">
-  <h3>London</h3>
-  <p>London is the capital city of England.</p>
+  <br>
+  <h3>تیکت</h3>
+  <br><br>
+    <a class="button" href="#add_wallet"  onclick="tabsB(event, 'add_wallet')"  name="">افزودن کیف پول</a>
+    <a class="button" href="#show_wallet" onclick="tabsB(event, 'show_wallet')" name="">کیف پول ها</a>
+  <br><br>
+</div>
+<div id="add_wallet" class="textcontent tabcontent">
+  <h3>افزودن کیف پول</h3><br><br>
+<?php
+    include WPS_WAL."/add_wallet.php";
+?>
+</div>
+<div id="show_wallet" class="textcontent tabcontent">
+<?php
+    include WPS_WAL."/show_wallet.php";
+    
+?>
+</div>
 </div>
 <div id="edit" class="tabcontent">
   <h3>Paris</h3>
@@ -55,7 +73,10 @@
 <?php
       }else{
     include WPS_UTI."/ShowTiket.php";
-}
+}}else{ ?>
+<h3>افزودن مبلغ</h3><br>
+<?php
+ include WPS_WAL."/add_amount.php"; }
 ?>
 </div>
 <?php

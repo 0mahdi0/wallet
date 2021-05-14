@@ -145,3 +145,19 @@
   display: inline-block !important;
   margin-right: 10px !important;
 }
+.notice-success{
+  text-align: center;
+  background-color: #00ff78;
+  padding: 20px;
+}
+.notice-error{
+  text-align: center;
+  background-color: #fc4242;
+  padding: 20px;
+}
+.trash a{
+  color:#ff2a2a !important;
+}
+.ADD a{
+  color:#3cff2a !important;
+}

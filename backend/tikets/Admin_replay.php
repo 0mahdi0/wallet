@@ -7,9 +7,8 @@ wp_enqueue_script('wp_apis_scripts_users');
 <br><br>
 <table class="widefat fixed alternates" cellspacing="0">
     <tbody>
-    <?php foreach($wu_tikets as $tiket){
-            if (!isset($_GET['action']) && !isset($_GET['item']) ) {
-        if($tiket->status == 1){ ?>
+<?php if (!isset($_GET['action']) || !isset($_GET['item']) ) {
+    ?>
     <tr>
             <th  class="manage-column column-columnname " scope="col">موضوع</th>
             <th  class="manage-column column-columnname " scope="col">متن تیکت</th>
@@ -17,7 +16,10 @@ wp_enqueue_script('wp_apis_scripts_users');
             <th  class="manage-column column-columnname " scope="col">عملیات</th>
 
     </tr>
-
+    <?php }?>
+    <?php foreach($wu_tikets as $tiket){
+            if (!isset($_GET['action']) && !isset($_GET['item']) ) {
+        if($tiket->status == 1){ ?>
         <div>
             <tr class="alternate" valign="top">
                 <td class="column-columnname" scope="row"><?php echo $tiket->subject; ?></td>
