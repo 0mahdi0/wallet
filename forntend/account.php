@@ -24,23 +24,28 @@ function user_account(){
                 ]
                 );
             if ($success != false) {
+                $url = home_url()."/account"; 
+
                 ?>
-                <p><strong>ارسال شد</strong></p>
+                    <div class="notice notice-success is-dismissible"> 
+                    <p><strong>ارسال شد</strong></p>
+                    </div>
                     <script>
-                
+
                     demo();
-                
+
                     function demo()
                     {
-                        window.location.href="/wordpress/2021/05/05/account/";
+                        window.location.href="<?php echo $url; ?>";
                     }
-                
+
                     </script>
- 
                 <?php
             }else{
                 ?>
-                <p><strong>ارسال نشد</strong></p>
+                    <div class="notice notice-error is-dismissible"> 
+                    <p><strong>ارسال نشد</strong></p>
+                    </div>
                 <?php
             }
         }
@@ -70,13 +75,15 @@ function user_account(){
             if (isset($_POST['user_message'])) {
 
                 $message  = $_POST['user_message'];
-                $tiket_id = $_GET['item'];
+                $tiket_id = $_GET['show'];
                 $success1 = $wpdb->insert($wpdb->prefix.'wu_tikets_replay',
                     [
                         'tiket_id' => $tiket_id,
+                        'is_user'  => 1 ,
                         'text'     => $message
                     ],
                     [
+                        '%d',
                         '%d',
                         '%s'
                     ]

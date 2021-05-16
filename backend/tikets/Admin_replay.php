@@ -5,6 +5,7 @@ wp_enqueue_script('wp_apis_scripts_users');
 
 ?>
 <br><br>
+<br><a style="float:right;" class="button" onclick="direction()" >بازگشت</a><br>
 <table class="widefat fixed alternates" cellspacing="0">
     <tbody>
 <?php if (!isset($_GET['action']) || !isset($_GET['item']) ) {
@@ -32,21 +33,29 @@ wp_enqueue_script('wp_apis_scripts_users');
                 </td>
             </tr>
         </div>
-        <?php }}else{
-            foreach($wu_tiket_replay as $replay){
+        <?php }}else{ 
+                        if ($_GET['item'] == $tiket->id) {
+
+            ?>
+            <div class="main_tiket">
+                <p>موضوع : <?php echo $tiket->subject; ?></p>
+                <p><p>متن پاسخ :</p><span class="text"><?php echo $tiket->text; ?></span></p>
+            </div>
+            <?php
+            } foreach($wu_tiket_replay as $replay){
             if ($_GET['item'] == $replay->tiket_id && $_GET['item'] == $tiket->id) {
-                ?>
-                <br><a style="float:right;" class="button" onclick="direction()" >بازگشت</a><br>
+                if ($replay->is_user == 1) {    ?>
                 <div class="USer">
-                        <p class="column-columnname" scope="row"><p class="subject">موضوع : <?php echo $tiket->subject; ?></p></p>
-                        <p class="column-columnname"><p class="subject">متن تیکت :</p><span class="text"><?php echo $tiket->text; ?></span></p>
+                        <p class="column-columnname" scope="row"><p class="subject">کاربر :</p></p>
+                        <p class="column-columnname"><p class="subject">متن پاسخ :</p><span class="text"><?php echo $replay->text; ?></span></p>
                 </div>
+                <?php } if ($replay->is_user == 2) { ?>
                 <div class="ADmin">
                         <p class="column-columnname" scope="row"><p class="subject">ادمین :</p></p>
                         <p class="column-columnname"><p class="subject">متن پاسخ :</p><span class="text"><?php echo $replay->text; ?></span></p>
                 </div>
                 <?php
-        }}}}            if (!isset($_GET['action']) || !isset($_GET['item']) ) {
+        }}}}}            if (!isset($_GET['action']) || !isset($_GET['item']) ) {
             ?>
         </form>
     <tr>

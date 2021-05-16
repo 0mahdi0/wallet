@@ -130,9 +130,10 @@
   margin-left: 50px !important;
 }
 .user_m ,.admin_m{
+  margin: 20px 0px 20px;
   padding: 20px;
   -webkit-user-modify: read-write-plaintext-only;
-  width: 40%;
+  width: 60%;
   border-radius: 15px;
 }
 .user_m{ 
@@ -142,8 +143,8 @@
   float: right;
 }
 .tiket_end{
-  display: inline-block !important;
-  margin-right: 10px !important;
+  display: table !important;
+  margin: auto !important;
 }
 .notice-success{
   text-align: center;

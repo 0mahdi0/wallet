@@ -126,9 +126,11 @@ function wp_wallet_users_tikets(){
                 $success1 = $wpdb->insert($wpdb->prefix.'wu_tikets_replay',
                     [
                         'tiket_id' => $tiket_id,
+                        'is_user'  => 1 ,
                         'text'     => $message
                     ],
                     [
+                        '%d',
                         '%d',
                         '%s'
                     ]

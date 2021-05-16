@@ -52,6 +52,20 @@ wp_enqueue_script('wp_apis_scripts_users');
                 <td class="column-columnname" scope="row"><p class="subject">موضوع : <?php echo $tiket->subject; ?></p></td>
                 <td class="column-columnname"><p class="subject">متن تیکت :</p><span class="text"><?php echo $tiket->text; ?></span></td>
                 </tr>
+                <?php
+                foreach($wu_tiket_replay as $replay){
+                    if ($_GET['item'] == $replay->tiket_id && $_GET['item'] == $tiket->id) {
+                        if ($replay->is_user == 1) {    ?>
+                        <tr>
+                                <td class="column-columnname" scope="row"><p class="subject">کاربر :</p></td>
+                                <td class="column-columnname"><p class="subject">متن پاسخ :</p><span class="text"><?php echo $replay->text; ?></span></td>
+                        </tr>
+                        <?php } if ($replay->is_user == 2) { ?>
+                        <tr>
+                                <td class="column-columnname" scope="row"><p class="subject">ادمین :</p></p>
+                                <td class="column-columnname"><p class="subject">متن پاسخ :</p><span class="text"><?php echo $replay->text; ?></span></td>
+                        </tr>
+                        <?php  }}} ?>
                 <form class="form_edit" enctype="multipart/form-data" action="" method="post">
                 <div class="div_center">
                     <table class="formt-table">

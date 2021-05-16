@@ -25,14 +25,13 @@
                 <span class="ADD" name="wallet_ADD" ><a href="<?php echo add_query_arg(['A-wallet' => $wallet->id ]); ?>">افزودن مبلغ</a></span>
                 </td>
             </tr>
-</table>
 <br><br>
-<?php if($diff->format("%R%a") >= 0){?>
+<?php if($diff->format("%R%a") >= 0){if($wallet->type == 1){?>
     <form class="form_edit_U_P" enctype="multipart/form-data" action="" method="post">
-    <h3>ثبت زیرمجموعه</h3><br>
         <table>
             <tr> 
             <th><label for="wallet_number">ایمیل زیرمجموعه :</label></th>
+            <br><h3>ثبت زیرمجموعه</h3><br>
             <td><input type="email" name="sub_wallet_member" required></td>
             </tr>
             <tr> 
@@ -41,4 +40,5 @@
             </tr>
         </table>
     </form>
-<?php  }else{if($wallet->type == 1){ include WPS_WAL."/new_time_wallet.php";  }}}}} ?>
+<?php  }} if($diff->format("%R%a") <= 0 && $wallet->type == 1){ include WPS_WAL."/new_time_wallet.php";  }}}} ?>
+</table>

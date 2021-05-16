@@ -9,35 +9,45 @@
 ?>
       <div class="admin_m">
           <h4>ادمین</h4>
-          <p class="subject">متن پاسخ :</p><span class="text"><?php echo $tiket->text; ?></span>
+          <p class="subject">متن :</p><span class="text"><?php echo $tiket->text; ?></span>
       </div>
 <?php
 }else{
+    ?>
+    <div class="user_m">
+            <h4>شما</h4>
+            <p class="subject">متن تیکت :</p><span class="text"><?php echo $tiket->text; ?></span>
+    </div>
+    <?php
 foreach($wu_tiket_replay as $replay){
-    if ($_GET['show'] == $replay->tiket_id) {
-        ?>
+    if ($_GET['show'] == $replay->tiket_id && $_GET['show'] == $tiket->id) {
+        if ($replay->is_user == 1) {    ?>
+    <div>    
       <div class="user_m">
               <h4>شما</h4>
-              <p class="subject">متن تیکت :</p><span class="text"><?php echo $tiket->text; ?></span>
+              <p class="subject">پاسخ شما :</p><span class="text"><?php  echo $replay->text; ?></span>
       </div>
+      <?php } if ($replay->is_user == 2) { ?>
       <div class="admin_m">
               <h4>ادمین</h4>
-              <p class="subject">متن پاسخ :</p><span class="text"><?php echo $replay->text; ?></span>
+              <p class="subject">پاسخ ادمین :</p><span class="text"><?php echo $replay->text; ?></span>
       </div>
-      <?php     if ($tiket->status != 2 && $tiket->status != 4) {
+    </div>
+    <br>
+      <?php   }}} if ($tiket->status != 2 && $tiket->status != 4) {
 ?>
-<form class="tiket_end" method="post"><input type="submit" value="بستن تیکت" name="tiket_end"></form>
     <form class="form_edit" enctype="multipart/form-data" action="" method="post">
-        <div class="div_center">
-            <table class="formt-table">
-                <tr class="formt-table" valign="top"> 
-                    <td class="formt-table" scope="row"><label class="select_user" for="user_message">متن پیام : </label></td>
-                    <td class="formt-table"><textarea name="user_message" id="user_message" cols="33" rows="5" required></textarea></td>
+        <div>
+            <table>
+                <tr> 
+                    <td><label class="select_user" for="user_message">متن پیام : </label></td>
+                    <td><textarea name="user_message" id="user_message" cols="33" rows="5" required></textarea></td>
                 </tr>
-                <tr class="formt-table" valign="top"> 
-                    <td class="formt-table"><input type="submit" class="button wu_mp" name="submit_rep" value="ارسال"></td>
+                <tr> 
+                    <td><input type="submit" class="button wu_mp" name="submit_rep" value="ارسال"></td>
                 </tr>
             </table>
         </div>
-    </form>
-<?php }}}}}} ?>
+    </form><br>
+    <form class="tiket_end" method="post"><input type="submit" value="بستن تیکت" name="tiket_end"></form>
+<?php }}}} ?>

@@ -11,7 +11,6 @@
 <div id="hide_all">
 <div class="tab">
   <button class="tablinks" onclick="tabsA(event, 'wallet')" id="defaultOpen">کیف پول ها</button>
-  <button class="tablinks" onclick="tabsA(event, 'edit')">ویرایش</button>
   <button class="tablinks" onclick="tabsA(event, 'tiket')">تیکت</button>
   <button class="tablinks" onclick="tabsA(event, 'logout')">خروج</button>
 </div>
@@ -35,10 +34,6 @@
     
 ?>
 </div>
-</div>
-<div id="edit" class="tabcontent">
-  <h3>Paris</h3>
-  <p>Paris is the capital of France.</p> 
 </div>
 <div id="tiket" class="tabcontent">
   <br>
