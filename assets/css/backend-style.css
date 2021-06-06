@@ -1,0 +1,121 @@
+/* margin from top in wallet , users and tikets */
+table.alternates{
+    margin-top: 15px;
+  }
+  /* background color in table even */
+  tbody tr.alternate:nth-child(even) {
+    background-color: #cccccc;
+  }
+  .bitwin_line{
+    margin: 0 10px;
+    color: #000000;
+  }
+  .select_user , .subject{
+    font-size: 18px !important;
+  }
+  .text{
+    font-size: 15px !important;
+  }
+  .wu_mp{
+    margin:25px 0 !important; 
+    width: 260px;
+  }
+  .wu_add{
+    width: 100px;
+  }
+  .div_center{
+    margin:auto !important;
+    display:table !important;
+  }
+  .select_users,.subject{
+    width: 260px;
+  }
+  .add_amount{
+    width: 90%;
+  }
+  .formt-table{
+    margin: 20px auto;
+  }
+  .ADmin{
+    float: left;
+    background-color: rgb(201, 201, 201) ;
+  }
+  .USer ,.ADmin{
+    text-align: center;
+    margin:30px auto;
+    -webkit-user-modify: read-write-plaintext-only;
+    width: 60%;
+    border-radius: 15px;
+  }
+  .USer{ 
+    float: right;
+    background-color: white ;
+  }
+  .main_tiket{
+    background-color: white ;
+    width: 90% !important;
+    display: table;
+    border-radius: 15px;
+    padding: 20px;
+  }
+  /* The Modal (background) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+  
+  }
+  /* Modal Content */
+  .modal-content {
+    background-color: rgb(236, 236, 236) ;
+    position: relative;
+    border-radius: 15px;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 25%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.5s
+  }
+  
+  /* Add Animation */
+  @-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+  }
+  
+  @keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+  }
+  
+  /* The Close Button */
+  .close {
+    color: white;
+    margin: 10px 30px 5px -30px;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  input.submit_redate{
+    border: none !important;
+    background: none !important;
+    color: blue !important;
+    cursor: pointer !important;
+  }
