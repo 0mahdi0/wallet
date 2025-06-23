@@ -159,4 +159,7 @@ class forntend_user extends wallet{
     }
 
 }
-new forntend_user;
+
+if (!defined('WALLET_TESTS')) {
+    new forntend_user;
+}
