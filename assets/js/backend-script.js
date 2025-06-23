@@ -12,17 +12,21 @@ for (i = 0; i < acc.length; i++) {
     } 
   });
 }
-function selects(chk){  
-  if(document.getElementsByName('select_all').checked==true){
-for (i = 0; i < chk.length; i++)
-chk[i].checked = false ;
-document.getElementsByName('select_all').checked=false;
-}else{
-
-for (i = 0; i < chk.length; i++)
-chk[i].checked = true ;
-document.getElementsByName('select_all').checked=true;
-}  
+function selects(chk){
+  const selectAll = document.getElementsByName('select_all')[0];
+  if(selectAll && selectAll.checked === true){
+    for (i = 0; i < chk.length; i++){
+      chk[i].checked = false;
+    }
+    selectAll.checked = false;
+  }else{
+    for (i = 0; i < chk.length; i++){
+      chk[i].checked = true;
+    }
+    if(selectAll){
+      selectAll.checked = true;
+    }
+  }
 }
 function direction(){
   window.location.href = '/wordpress/wp-admin/admin.php?page=tikets&tab=Admin-replay';
