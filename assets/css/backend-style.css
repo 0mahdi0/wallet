@@ -1,3 +1,40 @@
+/* Minimal admin styles */
+body {
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f0f0f0;
+}
+
+button,
+input[type="submit"] {
+    background-color: #008cba;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover,
+input[type="submit"]:hover {
+    background-color: #007299;
+}
 /* margin from top in wallet , users and tikets */
 table.alternates{
     margin-top: 15px;
