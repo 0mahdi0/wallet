@@ -22,7 +22,7 @@ if($current_user_id == 0){
 <div>
 <h3>ارسال تیکت ناشناس</h3><br>
 <?php
-include(WPO_DIR."forntend/account/theme/ticets/UnknowTiket.php");
+include(WPO_DIR."frontend/account/theme/ticets/UnknowTiket.php");
 ?>
 </div>
 <!-- The Modal -->
