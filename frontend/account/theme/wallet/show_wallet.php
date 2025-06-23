@@ -40,5 +40,5 @@
             </tr>
         </table>
     </form>
-<?php  }} if($diff->format("%R%a") <= 0 && $wallet->type == 1){ include(WPO_DIR."forntend/account/theme/wallet/new_time_wallet.php");  }}}} ?>
+<?php  }} if($diff->format("%R%a") <= 0 && $wallet->type == 1){ include(WPO_DIR."frontend/account/theme/wallet/new_time_wallet.php");  }}}} ?>
 </table>

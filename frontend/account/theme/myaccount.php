@@ -23,12 +23,12 @@ if($current_user_id != 0){
 <div id="add_wallet" class="textcontent tabcontent">
 <h3>افزودن کیف پول</h3><br><br>
 <?php
-include(WPO_DIR."forntend/account/theme/wallet/add_wallet.php");
+include(WPO_DIR."frontend/account/theme/wallet/add_wallet.php");
 ?>
 </div>
 <div id="show_wallet" class="textcontent tabcontent">
 <?php
-include(WPO_DIR."forntend/account/theme/wallet/show_wallet.php");
+include(WPO_DIR."frontend/account/theme/wallet/show_wallet.php");
 ?>
 </div>
 </div>
@@ -43,13 +43,13 @@ include(WPO_DIR."forntend/account/theme/wallet/show_wallet.php");
 <div id="new_tiket" class="textcontent tabcontent">
 <h3>ارسال تیکت جدید</h3><br><br>
 <?php
-include(WPO_DIR."forntend/account/theme/ticets/NewTiket.php");
+include(WPO_DIR."frontend/account/theme/ticets/NewTiket.php");
 ?>
 </div>
 <div id="inbox" class="textcontent tabcontent">
 <h3>صندوق</h3><br>
 <?php
-include(WPO_DIR."forntend/account/theme/ticets/inbox.php");
+include(WPO_DIR."frontend/account/theme/ticets/inbox.php");
 ?>
 </div>
 <div id="logout" class="tabcontent">
@@ -63,11 +63,11 @@ include(WPO_DIR."forntend/account/theme/ticets/inbox.php");
 <div id="show_all">
 <?php
   }else{
-include(WPO_DIR."forntend/account/theme/ticets/ShowTiket.php");
+include(WPO_DIR."frontend/account/theme/ticets/ShowTiket.php");
 }}else{ ?>
 <h3>افزودن مبلغ</h3><br>
 <?php
-include(WPO_DIR."forntend/account/theme/wallet/add_amount.php"); }
+include(WPO_DIR."frontend/account/theme/wallet/add_amount.php"); }
 ?>
 </div>
 <?php

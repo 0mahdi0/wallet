@@ -343,4 +343,4 @@
     $wallet_u = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}wallet_users");
 
 
-    include(WPO_DIR."forntend/account/theme/myaccount.php");
+    include(WPO_DIR."frontend/account/theme/myaccount.php");

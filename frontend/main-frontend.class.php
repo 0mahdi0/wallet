@@ -1,5 +1,5 @@
 <?php
-class forntend_user extends wallet{
+class frontend_user extends wallet{
 
     public function __construct(){
         add_shortcode('wu_account',[$this,'user_account']);
@@ -9,21 +9,21 @@ class forntend_user extends wallet{
         add_action('wp_ajax_nopriv_wp_wu_register',[$this,'wu_do_register']);
     }
     public function user_account(){
-            wp_enqueue_script('forntend-script');
-            wp_enqueue_style('forntend-style');
-            include(WPO_DIR."forntend/account/account.php");
+            wp_enqueue_script('frontend-script');
+            wp_enqueue_style('frontend-style');
+            include(WPO_DIR."frontend/account/account.php");
     }
 
     public function user_register(){
-            wp_enqueue_script('forntend-script');
-            wp_enqueue_style('forntend-style');
-            include(WPO_DIR."forntend/account/theme/signup.php");
+            wp_enqueue_script('frontend-script');
+            wp_enqueue_style('frontend-style');
+            include(WPO_DIR."frontend/account/theme/signup.php");
     }
 
     public function user_login(){
-            wp_enqueue_script('forntend-script');
-            wp_enqueue_style('forntend-style');
-            include(WPO_DIR."forntend/account/signin.php");
+            wp_enqueue_script('frontend-script');
+            wp_enqueue_style('frontend-style');
+            include(WPO_DIR."frontend/account/signin.php");
     }
 
     public function wp_wu_do_login(){
@@ -159,4 +159,4 @@ class forntend_user extends wallet{
     }
 
 }
-new forntend_user;
+new frontend_user;

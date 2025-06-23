@@ -43,17 +43,17 @@ class wallet{
         wp_register_script('backend-script', WPO_URL.'assets/js/backend-script.js',array('jquery'));
         wp_enqueue_script('backend-script');
         }
-        wp_register_style('forntend-style', WPO_URL.'assets/css/forntend-style.css');
-        wp_enqueue_style('forntend-style');
-        wp_register_script('forntend-script', WPO_URL.'assets/js/forntend-script.js',array('jquery'));
-        wp_enqueue_script('forntend-script');
+        wp_register_style('frontend-style', WPO_URL.'assets/css/frontend-style.css');
+        wp_enqueue_style('frontend-style');
+        wp_register_script('frontend-script', WPO_URL.'assets/js/frontend-script.js',array('jquery'));
+        wp_enqueue_script('frontend-script');
     }
 
     public function includes(){
         if (is_admin()){
             include(WPO_DIR."backend/main-backend.class.php");
         }
-        include(WPO_DIR."forntend/main-forntend.class.php");
+        include(WPO_DIR."frontend/main-frontend.class.php");
     }
 
 }
