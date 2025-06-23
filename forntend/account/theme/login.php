@@ -5,7 +5,7 @@ if($current_user_id == 0){
 
 ?>
 <center>
-<div class="sign_in_w" style="padding: 10px;display:inline-block;">
+<div class="sign_in_w container">
 <h2 class="form-title">ورود</h2><br>
 <form method="POST" class="register-form" id="login_form">
 <div class="form-group">

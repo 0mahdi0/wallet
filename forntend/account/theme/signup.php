@@ -6,7 +6,7 @@
 <center>
 <?php if (get_option('users_can_register',[]) == 1) {
 ?>
-<div class="sign_up_w" style="padding: 10px;display:inline-block;">
+<div class="sign_up_w container">
     <h2 class="form-title">ثبت نام</h2><br>
     <form method="POST" class="register-form" id="register_form">
     <div class="form-group">
