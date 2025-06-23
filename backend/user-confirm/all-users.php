@@ -10,10 +10,10 @@
     );
     $currentTab = isset($_GET['tab']) ? $_GET['tab'] : 'ConfirmedUsers';
 
-    //mulit action 
+    //multi action
     if (!empty($_POST['submit'])) {
 
-        //varable for actions
+        //variable for actions
         $items  =  $_GET['item'] ;
         $href = $_POST['select_action'];
         $select_chs = $_POST['select_ch'];
@@ -75,7 +75,7 @@
     //deleting action
     if($action == 'trash'){
 
-        //varable for actions
+        //variable for actions
         $items  =  $_GET['item'] ;
         $item = intval($items);
 
@@ -88,7 +88,7 @@
     //not approved action
     if($action == 'no_approved'){
 
-        //varable for actions
+        //variable for actions
         $items  =  $_GET['item'] ;
         $item = intval($items);
 
@@ -110,7 +110,7 @@
     //approved action
     if($action == 'approved'){
 
-        //varable for actions
+        //variable for actions
         $items  =  $_GET['item'] ;
         $item = intval($items);        
         
@@ -132,5 +132,5 @@
     }
     //Select wp_users Table 
         $users = $wpdb->get_results("SELECT * FROM {$wpdb->users} ORDER BY ID");
-    //include themeplate
+    //include template
         include_once(WPO_DIR."backend/user-confirm/confirm/users_tab.php");
